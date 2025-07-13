@@ -1,0 +1,981 @@
+<main class="main">
+
+	<!-- Hero Section -->
+	<section id="hero" class="hero section dark-background">
+
+		{{#if data.banner}}
+		<img src="{{data.banner}}" alt="" data-aos="fade-in" class="" />
+		{{/if}}
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+			{{#if data.name}}
+			<h2>{{data.name}}</h2>
+			{{/if}}
+			{{#if data.roles}}
+			<p>I'm
+				<span
+					class="typed"
+					data-typed-items="{{data.roles}}"
+				>{{roles}}</span><span
+					class="typed-cursor typed-cursor--blink"
+					aria-hidden="true"
+				></span><span
+					class="typed-cursor typed-cursor--blink"
+					aria-hidden="true"
+				></span></p>
+			{{/if}}
+		</div>
+
+	</section><!-- /Hero Section -->
+
+	{{#if data.about}}
+	<!-- About Section -->
+	<section id="about" class="about section">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>About</h2>
+			{{#if data.about.objective}}
+			<p>{{data.about.objective}}</p>
+			{{/if}}
+		</div><!-- End Section Title -->
+
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+			<div class="row gy-4 justify-content-center">
+				<div class="col-lg-4">
+					{{#if data.about.profileImg}}
+						<img src="{{data.about.profileImg}}" class="img-fluid" alt="" />
+					{{/if}}
+				</div>
+				<div class="col-lg-8 content">
+					{{#if data.about.currentRole}}
+						<h2>{{data.about.currentRole}}</h2>
+					{{/if}}
+					{{#if data.about.personal}}
+					<div class="row">
+						<div class="col-lg-12">
+							<ul class="abt_ul">
+								{{#each data.about.personal}}
+									<li><i class="bi bi-chevron-right"></i>
+										<strong>{{this.name}}:</strong>
+										{{#if this.url}}
+										<span><a
+												href="tel:{{this.url}}"
+											>{{this.value}}</a><span>
+											{{else}}
+										<span>{{this.value}}</span>
+										{{/if}}
+									</li>
+								{{/each}}
+							</ul>
+						</div>
+						{{/if}}
+						{{!-- <div class="col-lg-6">
+							<ul>
+								<li><i class="bi bi-chevron-right"></i>
+									<strong>Age:</strong>
+									<span>{{data.about.personal.age}}</span></li>
+								<li><i class="bi bi-chevron-right"></i>
+									<strong>Degree:</strong>
+									<span>{{data.about.personal.degree}}</span></li>
+								<li><i class="bi bi-chevron-right"></i>
+									<strong>Email:</strong>
+									<span><a
+											href="mailto:{{data.about.personal.email}}"
+										>{{data.about.personal.email}}</a></span></li>
+							</ul>
+						</div> --}}
+					</div>
+					{{#if data.about.desc}}
+					<p class="py-3">
+						{{data.about.desc}}
+					</p>
+					{{/if}}
+				</div>
+			</div>
+		</div>
+	</section><!-- /About Section -->
+	{{/if}}
+
+	{{! <!-- Stats Section -->
+	<section id="stats" class="stats section">
+
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+			<div class="row gy-4">
+
+				<div class="col-lg-3 col-md-6">
+					<div class="stats-item">
+						<i class="bi bi-emoji-smile"></i>
+						<span
+							data-purecounter-start="0"
+							data-purecounter-end="232"
+							data-purecounter-duration="1"
+							class="purecounter"
+						></span>
+						<p><strong>Happy Clients</strong> <span>consequuntur quae</span></p>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-md-6">
+					<div class="stats-item">
+						<i class="bi bi-journal-richtext"></i>
+						<span
+							data-purecounter-start="0"
+							data-purecounter-end="521"
+							data-purecounter-duration="1"
+							class="purecounter"
+						></span>
+						<p><strong>Projects</strong>
+							<span>adipisci atque cum quia aut</span></p>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-md-6">
+					<div class="stats-item">
+						<i class="bi bi-headset"></i>
+						<span
+							data-purecounter-start="0"
+							data-purecounter-end="1453"
+							data-purecounter-duration="1"
+							class="purecounter"
+						></span>
+						<p><strong>Hours Of Support</strong>
+							<span>aut commodi quaerat</span></p>
+					</div>
+				</div><!-- End Stats Item -->
+
+				<div class="col-lg-3 col-md-6">
+					<div class="stats-item">
+						<i class="bi bi-people"></i>
+						<span
+							data-purecounter-start="0"
+							data-purecounter-end="32"
+							data-purecounter-duration="1"
+							class="purecounter"
+						></span>
+						<p><strong>Hard Workers</strong>
+							<span>rerum asperiores dolor</span></p>
+					</div>
+				</div><!-- End Stats Item -->
+
+			</div>
+
+		</div>
+
+	</section><!-- /Stats Section --> }}
+
+	<!-- Skills Section -->
+	<section id="skills" class="skills section light-background">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>Skills</h2>
+			{{#if data.skills.desc}}
+			<p>{{data.skills.desc}}</p>
+			{{/if}}
+		</div><!-- End Section Title -->
+		{{#if data.skills.data}}
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+			<div class="row skills-content skills-animation">
+				<div class="col-lg-12 skill_new">
+					{{#each data.skills.data}}
+						<div class="progress">
+							{{#if this.name}}
+							<span class="skill"><span>{{this.name}}</span>
+							{{/if}}
+							{{#if this.level}}
+								<i class="val">{{this.level}}%</i></span>
+							<div class="progress-bar-wrap">
+								<div
+									class="progress-bar"
+									role="progressbar"
+									aria-valuenow="{{this.level}}"
+									aria-valuemin="0"
+									aria-valuemax="100"
+								></div>
+							</div>
+							{{/if}}
+						</div><!-- End Skills Item -->
+					{{/each}}
+				</div>
+			</div>
+		</div>
+		{{/if}}
+	</section><!-- /Skills Section -->
+
+	<!-- Resume Section -->
+	<section id="resume" class="resume section">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>Resume</h2>
+			{{#if data.resume.desc}}
+			<p>{{data.resume.desc}}</p>
+			{{/if}}
+		</div><!-- End Section Title -->
+
+		<div class="container">
+			<div class="row">
+				{{#if data.resume.certificates}}
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+						<h3 class="resume-title">Certificates</h3>
+						{{#each data.resume.certificates}}
+							<div class="resume-item">
+								{{#if this.course}}
+									<h4>{{this.course}}</h4>
+								{{/if}}
+								{{#if this.duration}}
+									<h5>{{this.duration}}</h5>
+								{{/if}}
+								{{#if this.institute}}
+									<p><em>{{this.institute}}</em></p>
+								{{/if}}
+								{{#if this.desc}}
+									<p>{{this.desc}}</p>
+								{{/if}}
+							</div><!-- Edn Resume Item -->
+						{{/each}}
+					</div>
+				{{/if}}
+				{{#if data.resume.education}}
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+						<h3 class="resume-title">Education</h3>
+						{{#each data.resume.education}}
+							<div class="resume-item">
+								{{#if this.course}}
+									<h4>{{this.course}}</h4>
+								{{/if}}
+								{{#if this.duration}}
+									<h5>{{this.duration}}</h5>
+								{{/if}}
+								{{#if this.institute}}
+									<p><em>{{this.institute}}</em></p>
+								{{/if}}
+								{{#if this.desc}}
+									<p>{{this.desc}}</p>
+								{{/if}}
+							</div><!-- Edn Resume Item -->
+						{{/each}}
+					</div>
+				{{/if}}
+
+				{{#if data.resume.experience}}
+					<div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
+						<h3 class="resume-title">Professional Experience</h3>
+						{{#each data.resume.experience}}
+							<div class="resume-item">
+								{{#if this.role}}
+									<h4>{{this.role}}</h4>
+								{{/if}}
+								{{#if this.duration}}
+									<h5>{{this.duration}}</h5>
+								{{/if}}
+								{{#if this.company}}
+									<p><em>{{this.company}}</em></p>
+								{{/if}}
+								{{#if this.desc}}
+									<ul>
+										{{#each this.desc}}
+											<li>{{this}}</li>
+										{{/each}}
+									</ul>
+								{{/if}}
+							</div><!-- Edn Resume Item -->
+						{{/each}}
+					</div>
+				{{/if}}
+			</div>
+		</div>
+	</section><!-- /Resume Section -->
+
+	{{! <!-- Portfolio Section -->
+	<section id="portfolio" class="portfolio section light-background">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>Portfolio</h2>
+			<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex
+				aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos
+				quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat
+				sit in iste officiis commodi quidem hic quas.</p>
+		</div><!-- End Section Title -->
+
+		<div class="container">
+
+			<div
+				class="isotope-layout"
+				data-default-filter="*"
+				data-layout="masonry"
+				data-sort="original-order"
+			>
+
+				<ul
+					class="portfolio-filters isotope-filters"
+					data-aos="fade-up"
+					data-aos-delay="100"
+				>
+					<li data-filter="*" class="filter-active">All</li>
+					<li data-filter=".filter-app">App</li>
+					<li data-filter=".filter-product">Product</li>
+					<li data-filter=".filter-branding">Branding</li>
+					<li data-filter=".filter-books">Books</li>
+				</ul><!-- End Portfolio Filters -->
+
+				<div
+					class="row gy-4 isotope-container"
+					data-aos="fade-up"
+					data-aos-delay="200"
+				>
+
+					<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/app-1.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>App 1</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/app-1.jpg"
+									title="App 1"
+									data-gallery="portfolio-gallery-app"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/product-1.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Product 1</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/product-1.jpg"
+									title="Product 1"
+									data-gallery="portfolio-gallery-product"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/branding-1.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Branding 1</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/branding-1.jpg"
+									title="Branding 1"
+									data-gallery="portfolio-gallery-branding"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/books-1.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Books 1</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/books-1.jpg"
+									title="Branding 1"
+									data-gallery="portfolio-gallery-book"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/app-2.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>App 2</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/app-2.jpg"
+									title="App 2"
+									data-gallery="portfolio-gallery-app"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/product-2.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Product 2</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/product-2.jpg"
+									title="Product 2"
+									data-gallery="portfolio-gallery-product"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/branding-2.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Branding 2</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/branding-2.jpg"
+									title="Branding 2"
+									data-gallery="portfolio-gallery-branding"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/books-2.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Books 2</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/books-2.jpg"
+									title="Branding 2"
+									data-gallery="portfolio-gallery-book"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div class="col-lg-4 col-md-6 portfolio-item isotope-item filter-app">
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/app-3.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>App 3</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/app-3.jpg"
+									title="App 3"
+									data-gallery="portfolio-gallery-app"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-product"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/product-3.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Product 3</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/product-3.jpg"
+									title="Product 3"
+									data-gallery="portfolio-gallery-product"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-branding"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/branding-3.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Branding 3</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/branding-3.jpg"
+									title="Branding 2"
+									data-gallery="portfolio-gallery-branding"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+					<div
+						class="col-lg-4 col-md-6 portfolio-item isotope-item filter-books"
+					>
+						<div class="portfolio-content h-100">
+							<img
+								src="assets/img/portfolio/books-3.jpg"
+								class="img-fluid"
+								alt=""
+							/>
+							<div class="portfolio-info">
+								<h4>Books 3</h4>
+								<p>Lorem ipsum, dolor sit amet consectetur</p>
+								<a
+									href="assets/img/portfolio/books-3.jpg"
+									title="Branding 3"
+									data-gallery="portfolio-gallery-book"
+									class="glightbox preview-link"
+								><i class="bi bi-zoom-in"></i></a>
+								<a
+									href="portfolio-details.html"
+									title="More Details"
+									class="details-link"
+								><i class="bi bi-link-45deg"></i></a>
+							</div>
+						</div>
+					</div><!-- End Portfolio Item -->
+
+				</div><!-- End Portfolio Container -->
+
+			</div>
+
+		</div>
+
+	</section><!-- /Portfolio Section --> }}
+
+	<!-- Services Section -->
+	{{#if data.project}}
+		<section id="services" class="services section">
+			<!-- Section Title -->
+			<div class="container section-title" data-aos="fade-up">
+				<h2>Projects</h2>
+				{{#if data.project.desc}}
+					<p>{{data.project.desc}}</p>
+				{{/if}}
+			</div><!-- End Section Title -->
+
+			{{#if data.project.data}}
+				<div class="container">
+					<div class="row gy-4">
+						{{#each data.project.data}}
+							<div
+								class="col-lg-6 col-md-6 service-item d-flex"
+								data-aos="fade-up"
+								data-aos-delay="{{@index}}00"
+							>
+							{{#if this.class}}
+								<div class="icon flex-shrink-0"><i
+										class="bi bi-{{this.class}}"
+									></i></div>
+							{{/if}}
+								<div>
+									{{#if this.title}}
+									<h4 class="title">{{this.title}}</a></h4>
+									{{/if}}
+									<p class="description">{{this.desc}}
+									{{#if this.url}}
+									<br/>
+									<span class="description">url: <a
+											href="{{this.url}}"
+											class="stretched-link"
+										>{{this.url}}</a></span>
+										{{/if}}
+									</p>
+								</div>
+							</div>
+						{{/each}}
+						<!-- End Service Item -->
+					</div>
+				</div>
+			{{/if}}
+
+		</section><!-- /Services Section -->
+	{{/if}}
+
+	{{! <!-- Testimonials Section -->
+	<section id="testimonials" class="testimonials section light-background">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>Testimonials</h2>
+			<p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint
+				consectetur velit</p>
+		</div><!-- End Section Title -->
+
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+			<div class="swiper init-swiper">
+				<script type="application/json" class="swiper-config">
+					{ "loop": true, "speed": 600, "autoplay": { "delay": 5000 },
+					"slidesPerView": "auto", "pagination": { "el": ".swiper-pagination",
+					"type": "bullets", "clickable": true }, "breakpoints": { "320": {
+					"slidesPerView": 1, "spaceBetween": 40 }, "1200": { "slidesPerView":
+					3, "spaceBetween": 1 } } }
+				</script>
+				<div class="swiper-wrapper">
+
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>Proin iaculis purus consequat sem cure digni ssim donec
+									porttitora entum suscipit rhoncus. Accusantium quam, ultricies
+									eget id, aliquam eget nibh et. Maecen aliquam, risus at
+									semper.</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+							<img
+								src="assets/img/testimonials/testimonials-1.jpg"
+								class="testimonial-img"
+								alt=""
+							/>
+							<h3>Saul Goodman</h3>
+							<h4>Ceo &amp; Founder</h4>
+						</div>
+					</div><!-- End testimonial item -->
+
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>Export tempor illum tamen malis malis eram quae irure esse
+									labore quem cillum quid malis quorum velit fore eram velit
+									sunt aliqua noster fugiat irure amet legam anim culpa.</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+							<img
+								src="assets/img/testimonials/testimonials-2.jpg"
+								class="testimonial-img"
+								alt=""
+							/>
+							<h3>Sara Wilsson</h3>
+							<h4>Designer</h4>
+						</div>
+					</div><!-- End testimonial item -->
+
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>Enim nisi quem export duis labore cillum quae magna enim
+									sint quorum nulla quem veniam duis minim tempor labore quem
+									eram duis noster aute amet eram fore quis sint minim.</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+							<img
+								src="assets/img/testimonials/testimonials-3.jpg"
+								class="testimonial-img"
+								alt=""
+							/>
+							<h3>Jena Karlis</h3>
+							<h4>Store Owner</h4>
+						</div>
+					</div><!-- End testimonial item -->
+
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>Fugiat enim eram quae cillum dolore dolor amet nulla culpa
+									multos export minim fugiat dolor enim duis veniam ipsum anim
+									magna sunt elit fore quem dolore labore illum veniam.</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+							<img
+								src="assets/img/testimonials/testimonials-4.jpg"
+								class="testimonial-img"
+								alt=""
+							/>
+							<h3>Matt Brandon</h3>
+							<h4>Freelancer</h4>
+						</div>
+					</div><!-- End testimonial item -->
+
+					<div class="swiper-slide">
+						<div class="testimonial-item">
+							<p>
+								<i class="bi bi-quote quote-icon-left"></i>
+								<span>Quis quorum aliqua sint quem legam fore sunt eram irure
+									aliqua veniam tempor noster veniam sunt culpa nulla illum
+									cillum fugiat legam esse veniam culpa fore nisi cillum quid.</span>
+								<i class="bi bi-quote quote-icon-right"></i>
+							</p>
+							<img
+								src="assets/img/testimonials/testimonials-5.jpg"
+								class="testimonial-img"
+								alt=""
+							/>
+							<h3>John Larson</h3>
+							<h4>Entrepreneur</h4>
+						</div>
+					</div><!-- End testimonial item -->
+
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+
+		</div>
+
+	</section><!-- /Testimonials Section --> }}
+
+	<!-- Contact Section -->
+	<section id="contact" class="contact section">
+
+		<!-- Section Title -->
+		<div class="container section-title" data-aos="fade-up">
+			<h2>Contact</h2>
+			{{#if data.contact.desc}}
+				<p>{{data.contact.desc}}</p>
+			{{/if}}
+		</div><!-- End Section Title -->
+
+		<div class="container" data-aos="fade-up" data-aos-delay="100">
+
+			<div class="row gy-4">
+
+				<div class="col-lg-12">
+
+					<div class="info-wrap">
+						<div
+							class="info-item d-flex"
+							data-aos="fade-up"
+							data-aos-delay="200"
+						>
+							<i class="bi bi-geo-alt flex-shrink-0"></i>
+							<div>
+								<h3>Address</h3>
+								{{#if data.contact.address}}
+									<p>{{data.contact.address}}</p>
+								{{/if}}
+							</div>
+						</div><!-- End Info Item -->
+
+						{{#if data.contact.phone}}
+							<div
+								class="info-item d-flex"
+								data-aos="fade-up"
+								data-aos-delay="300"
+							>
+								<i class="bi bi-telephone flex-shrink-0"></i>
+								<div>
+									<h3>Call Us</h3>
+									<p><a
+											href="tel:{{data.contact.phone}}"
+										>{{data.contact.phone}}</a></p>
+								</div>
+							</div><!-- End Info Item -->
+						{{/if}}
+
+						{{#if data.contact.email}}
+							<div
+								class="info-item d-flex"
+								data-aos="fade-up"
+								data-aos-delay="400"
+							>
+								<i class="bi bi-envelope flex-shrink-0"></i>
+								<div>
+									<h3>Email Us</h3>
+									<p><a
+											href="mailto:{{data.contact.email}}"
+										>{{data.contact.email}}</a></p>
+								</div>
+							</div><!-- End Info Item -->
+						{{/if}}
+
+						{{#if data.contact.map}}
+							<iframe
+								src="{{data.contact.map}}"
+								frameborder="0"
+								class="map"
+								allowfullscreen=""
+								loading="lazy"
+								referrerpolicy="no-referrer-when-downgrade"
+							></iframe>
+						{{/if}}
+					</div>
+				</div>
+
+				{{! <div class="col-lg-7">
+					<form
+						action="forms/contact.php"
+						method="post"
+						class="php-email-form"
+						data-aos="fade-up"
+						data-aos-delay="200"
+					>
+						<div class="row gy-4">
+
+							<div class="col-md-6">
+								<label for="name-field" class="pb-2">Your Name</label>
+								<input
+									type="text"
+									name="name"
+									id="name-field"
+									class="form-control"
+									required=""
+								/>
+							</div>
+
+							<div class="col-md-6">
+								<label for="email-field" class="pb-2">Your Email</label>
+								<input
+									type="email"
+									class="form-control"
+									name="email"
+									id="email-field"
+									required=""
+								/>
+							</div>
+
+							<div class="col-md-12">
+								<label for="subject-field" class="pb-2">Subject</label>
+								<input
+									type="text"
+									class="form-control"
+									name="subject"
+									id="subject-field"
+									required=""
+								/>
+							</div>
+
+							<div class="col-md-12">
+								<label for="message-field" class="pb-2">Message</label>
+								<textarea
+									class="form-control"
+									name="message"
+									rows="10"
+									id="message-field"
+									required=""
+								></textarea>
+							</div>
+
+							<div class="col-md-12 text-center">
+								<div class="loading">Loading</div>
+								<div class="error-message"></div>
+								<div class="sent-message">Your message has been sent. Thank you!</div>
+
+								<button type="submit">Send Message</button>
+							</div>
+
+						</div>
+					</form>
+				</div><!-- End Contact Form --> }}
+
+			</div>
+
+		</div>
+
+	</section><!-- /Contact Section -->
+
+</main>
